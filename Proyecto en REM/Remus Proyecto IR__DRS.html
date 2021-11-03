@@ -28,17 +28,305 @@
 </div>
 <div id="document_name">Documento de Análisis del Sistema</div>
 <div id="document_version">Versión 1.0</div>
-<div id="document_date">Fecha 20/10/2021</div>
-<div id="document_prepared_for">Preparado para:<p class="tbd">?</p></div>
-<div id="document_prepared_by">Preparado por:<p class="tbd">?</p></div>
+<div id="document_date">Fecha 03/11/2021</div>
+<div id="document_prepared_for">Preparado para:<p>
+<a href="#ORG-0001">APDE</a>
+</p>
+</div>
+<div id="document_prepared_by">Preparado por:<p>
+<a href="#ORG-0002">IR-G3-12</a>
+</p>
+</div>
 </div>
 <div class="pagebreak"></div>
 <nav id="toc" role="navigation">
 <h1>Índice</h1>
 <ul class="toc_list toc_list_level_1">
+<li>1 <a href="#SEC-0049">Introducción</a></li>
+<ul class="toc_list">
+<li>1.1 <a href="#SEC-0050">Alcance del proyecto</a></li>
+<li>1.2 <a href="#SEC-0051">Participantes en el proyecto</a></li>
+<ul class="toc_list">
+<li>1.2.1 <a href="#SEC-0052">Copia de Organizaciones participantes</a></li>
+<li>1.2.2 <a href="#SEC-0053">Copia de Personas participantes</a></li>
+</ul>
+</ul>
+<li>2 <a href="#SEC-0054">Arquitectura logica del sistema</a></li>
+<ul class="toc_list">
+<li>2.1 <a href="#SEC-0055">Diagramas de la arquitectura del sistema</a></li>
+<li>2.2 <a href="#SEC-0056">Descripción de la arquitectura del sistema</a></li>
+</ul>
+<li>3 <a href="#SEC-0057">Modelo de clases del sistema</a></li>
+<ul class="toc_list">
+<li>3.1 <a href="#SEC-0058">Diagramas de clases del sistema</a></li>
+<li>3.2 <a href="#SEC-0059">Descripción de las clases del sistema</a></li>
+<li>3.3 <a href="#SEC-0060">Diagramas de estado de las clases del sistema</a></li>
+</ul>
+<li>4 <a href="#SEC-0061">Modelo de casos de usos del sistema</a></li>
+<ul class="toc_list">
+<li>4.1 <a href="#SEC-0062">Diagramas de secuencia del sistema</a></li>
+<li>4.2 <a href="#SEC-0063">Descripción de los diagramas de secuencia del sistema</a></li>
+</ul>
+<li>5 <a href="#SEC-0064">Interfaz de usuario del sistema</a></li>
+<ul class="toc_list">
+<li>5.1 <a href="#SEC-0065">Diagramas de navegación del sistema</a></li>
+<li>5.2 <a href="#SEC-0066">Esquemas de la interfaz de usuario del sistema</a></li>
+<li>5.3 <a href="#SEC-0067">Descripción de la interfaz de usuario del sistema</a></li>
+</ul>
 </ul>
 </nav>
 <div class="pagebreak"></div>
+<h1 id="SEC-0049" class="section">1 Introducción</h1>
+<h2 id="SEC-0050" class="section">1.1 Alcance del proyecto</h2>
+<div id="PRG-0034">
+<div id="PRG-0034-text-html" class=""><p>La empresa elegida se dedica al asesoramiento laboral, fiscal y contable. Lleva temas mercantiles (cubre las obligaciones de sus <a href='#GLO-0007' class="rem_ref">clientes</a> con Registro Mercantil), fiscales (cubre las obligaciones con Hacienda) y laborales (asiste en los temas de contratación de trabajadores) de la empresa tanto para problemas administrativos. </p>
+<p>Cada uno de esos 3 ámbitos lo cubren 3 profesionales diferentes, especializados cada uno en uno de esos temas.  </p>
+<p>Además, también tienen una secretaria y un gerente que coordina a los 3 profesionales. </p>
+<p>Los 3 profesionales, a pesar de contar con programas especializados, aún hay ciertos ámbitos que tienen que realizar a mano.  </p>
+<p>Nuestro proyecto busca proveerles de una herramienta que, a partir de los correos electrónicos que les envían los <a href='#GLO-0007' class="rem_ref">clientes</a>, sea capaz de organizar todos los documentos de una empresa y mostrarlos de forma cronológica. También proveerá de un indicador de 'esfuerzo' necesario para elaborar un documento en concreto para una empresa en concreto, teniendo en cuenta experiencias anteriores y también cuanto tiempo (o e-mails) se ha invertido en la comunicación con esta. </p>
+<p>Para facilitar el trabajo del profesional, la herramienta va a recopilar la información necesaria para ponerse a trabajar; por ejemplo, si necesitan la firma electrónica de una empresa, el programa lo buscará y se lo facilitará al gestor nada más acepte la tarea, sin que él tenga que buscarlo. </p>
+<p>También le va a ayudar a elegir la empresa por la que empezar. Para ello tendrá en cuenta el esfuerzo y los plazos que tienen para entregar los documentos. En caso de que un documento tenga un plazo a punto de cumplir y aun no se haya completado, se le mandará un aviso al profesional responsable. </p>
+<p>Además de todo eso, para facilitar el contacto inicial con una empresa, se podrá en marcha el desarrollo de un formulario a partir de un par de datos que se proveerán.  </p>
+<p>Al recibir estos datos, el programa buscará en diversas bases de datos internas más información sobre ellos, para valorarla, y finalmente proveer una estimación de esfuerzo que indique si una empresa es fiable. </p>
+<p>En definitiva, se busca optimizar al máximo la eficiencia de los trabajadores, e incluso permitir la inclusión de nuevos trabajadores minimizando la curva de aprendizaje que actualmente se tiene. </p></div>
+</div>
+<h2 id="SEC-0051" class="section">1.2 Participantes en el proyecto</h2>
+<h3 id="SEC-0052" class="section">1.2.1 Copia de Organizaciones participantes</h3>
+<div id="ORG-0003">
+<table class="organization remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/organization.png" /> Organización</th>
+<th class="name_column" colspan="1">Copia de APDE</th>
+</tr>
+</thead>
+<tr>
+<th>Dirección</th>
+<td colspan="1">
+<div id="ORG-0003-address-html" class=""><p>Edificio Acrópolis, en la avenida Averroes,8. Módulo 107 </p></div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="ORG-0003-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="ORG-0004">
+<table class="organization remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/organization.png" /> Organización</th>
+<th class="name_column" colspan="1">Copia de IR-G3-12</th>
+</tr>
+</thead>
+<tr>
+<th>Dirección</th>
+<td colspan="1">
+<div id="ORG-0004-address-html" class=""><p>ETSII - Reina Mercedes</p></div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="ORG-0004-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="SEC-0053" class="section">1.2.2 Copia de Personas participantes</h3>
+<div id="STK-0007">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">Copia de Pablo Álvarez Caro</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>
+<a href="#ORG-0002">IR-G3-12 </a>
+</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0007-stakeholderRole-html" class=""><span class="tbd" title='Por determinar'>PD</span>                        (es desarrollador)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0007-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0008">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">Copia de Pablo Marín Gómez</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>
+<a href="#ORG-0002">IR-G3-12 </a>
+</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0008-stakeholderRole-html" class=""><span class="tbd" title='Por determinar'>PD</span>                        (es desarrollador)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0008-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0009">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">Copia de Francisco Javier Migueles Domínguez</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>
+<a href="#ORG-0002">IR-G3-12 </a>
+</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0009-stakeholderRole-html" class=""><span class="tbd" title='Por determinar'>PD</span>                        (es desarrollador)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0009-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0010">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">Copia de Diego Ruiz Gil</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>
+<a href="#ORG-0002">IR-G3-12 </a>
+</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0010-stakeholderRole-html" class=""><span class="tbd" title='Por determinar'>PD</span>                        (es desarrollador)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0010-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0011">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">Copia de David Zamora Fernández</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>
+<a href="#ORG-0002">IR-G3-12 </a>
+</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0011-stakeholderRole-html" class=""><span class="tbd" title='Por determinar'>PD</span>                        (es desarrollador)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0011-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="STK-0012">
+<table class="stakeholder remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/stakeholder.png" /> Participante</th>
+<th class="name_column" colspan="1">Copia de José Antonio Martínez Domínguez</th>
+</tr>
+</thead>
+<tr>
+<th>Organización</th>
+<td>
+<a href="#ORG-0001">APDE</a>
+</td>
+</tr>
+<tr>
+<th>Rol</th>
+<td colspan="1">
+<span id="STK-0012-stakeholderRole-html" class=""><span class="tbd" title='Por determinar'>PD</span>                        (es usuario)                    </span>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="STK-0012-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<h1 id="SEC-0054" class="section">2 Arquitectura logica del sistema</h1>
+<h2 id="SEC-0055" class="section">2.1 Diagramas de la arquitectura del sistema</h2>
+<h2 id="SEC-0056" class="section">2.2 Descripción de la arquitectura del sistema</h2>
+<h1 id="SEC-0057" class="section">3 Modelo de clases del sistema</h1>
+<h2 id="SEC-0058" class="section">3.1 Diagramas de clases del sistema</h2>
+<h2 id="SEC-0059" class="section">3.2 Descripción de las clases del sistema</h2>
+<h2 id="SEC-0060" class="section">3.3 Diagramas de estado de las clases del sistema</h2>
+<h1 id="SEC-0061" class="section">4 Modelo de casos de usos del sistema</h1>
+<h2 id="SEC-0062" class="section">4.1 Diagramas de secuencia del sistema</h2>
+<h2 id="SEC-0063" class="section">4.2 Descripción de los diagramas de secuencia del sistema</h2>
+<h1 id="SEC-0064" class="section">5 Interfaz de usuario del sistema</h1>
+<h2 id="SEC-0065" class="section">5.1 Diagramas de navegación del sistema</h2>
+<h2 id="SEC-0066" class="section">5.2 Esquemas de la interfaz de usuario del sistema</h2>
+<h2 id="SEC-0067" class="section">5.3 Descripción de la interfaz de usuario del sistema</h2>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
             // set tooltips of rem:ref references to glossary items or class supertypes
