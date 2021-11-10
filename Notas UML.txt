@@ -6,5 +6,7 @@ COSAS A CAMBIAR
 - Propiedades derivadas con /
 - Regla de negocio
 - Tiempo limite de encargo previo al del documento
+- Relacionar encargo con documento
+- Genero en representaciones de personas
 
 RECORDATORIO: ENTREVISTA 14/11/2021
