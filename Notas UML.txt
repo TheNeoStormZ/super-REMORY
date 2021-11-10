@@ -1,0 +1,10 @@
+
+DIA 10/11/2021
+
+COSAS A CAMBIAR
+- Las asociaciones no se superponen
+- Propiedades derivadas con /
+- Regla de negocio
+- Tiempo limite de encargo previo al del documento
+
+RECORDATORIO: ENTREVISTA 14/11/2021
