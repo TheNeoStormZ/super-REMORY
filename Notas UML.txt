@@ -5,6 +5,7 @@ COSAS A CAMBIAR
 - Las asociaciones no se superponen
 - Propiedades derivadas con /
 - Regla de negocio
+- Eliminar asesoria
 - Tiempo limite de encargo previo al del documento
 - Relacionar encargo con documento
 - Genero en representaciones de personas
