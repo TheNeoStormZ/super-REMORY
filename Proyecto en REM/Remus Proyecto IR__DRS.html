@@ -27,8 +27,8 @@
 <img alt="Universidad de Sevilla" src="https://cdn.jsdelivr.net/gh/amador-duran-toro/rem/assets/images/logo_us.gif" />
 </div>
 <div id="document_name">Documento de Análisis del Sistema</div>
-<div id="document_version">Versión 1.3</div>
-<div id="document_date">Fecha 04/12/2021</div>
+<div id="document_version">Versión 1.4</div>
+<div id="document_date">Fecha 05/12/2021</div>
 <div id="document_prepared_for">Preparado para:<p>
 <a href="#ORG-0001">APDE</a>
 </p>
@@ -466,7 +466,53 @@
 <span id="GRF-0024-name-html" class="">Enviar mensaje</span>
 </p>
 </div>
+<div id="GRF-0025" class="figure">
+<img class="figure_image" src=".\image\diagram_secuencia_estadist.png" />
+<p class="figure_caption">
+<span class="figure_caption_label">Figura 13:
+                 </span>
+<span id="GRF-0025-name-html" class="">Añadir estadística</span>
+</p>
+</div>
+<div id="GRF-0026" class="figure">
+<img class="figure_image" src=".\image\diagram_secuencia_estadist2.png" />
+<p class="figure_caption">
+<span class="figure_caption_label">Figura 14:
+                 </span>
+<span id="GRF-0026-name-html" class="">Consultar estadísticas</span>
+</p>
+</div>
 <h2 id="SEC-0063" class="section">4.2 Descripción de los diagramas de secuencia del sistema</h2>
+<div id="PRG-0076">
+<div id="PRG-0076-text-html" class=""><p><b><u>Registrar <a href='#GLO-0007' class="rem_ref">cliente</a>:</u></b> El <a href='#GLO-0007' class="rem_ref">cliente</a> accede al formulario de registro en el cual debe introducir sus datos para quedar registrado en el sistema. </p></div>
+</div>
+<div id="PRG-0077">
+<div id="PRG-0077-text-html" class=""><p><b><u>Editar <a href='#GLO-0007' class="rem_ref">cliente</a>:</u></b>: El <a href='#GLO-0007' class="rem_ref">cliente</a> accede al sistema, donde podrá modificar sus datos registrados, editando un formulario. </p></div>
+</div>
+<div id="PRG-0078">
+<div id="PRG-0078-text-html" class=""><p><b><u>Eliminar <a href='#GLO-0007' class="rem_ref">cliente</a>:</u></b> El <a href='#GLO-0007' class="rem_ref">cliente</a> accede al sistema, donde podrá eliminar sus datos registrados, confirmando la decisión. </p></div>
+</div>
+<div id="PRG-0079">
+<div id="PRG-0079-text-html" class=""><p><b><u> Enviar y consultar emails generales:</u></b> El usuario accede al sistema, donde podrá consultar sus emails enviados y recibidos, y donde tendrá la posibilidad de redactar un nuevo email mediante un formulario. </p></div>
+</div>
+<div id="PRG-0080">
+<div id="PRG-0080-text-html" class=""><p><b><u>Consultar emails de un <a href='#GLO-0007' class="rem_ref">cliente</a>:</u></b> El asesor accede al sistema, donde podrá consultar su intercambio de emails de un <a href='#GLO-0007' class="rem_ref">cliente</a> en concreto. </p></div>
+</div>
+<div id="PRG-0081">
+<div id="PRG-0081-text-html" class=""><p><b><u>Añadir tarea:</u></b> El asesor accede al sistema, donde podrá añadir una tarea nueva. </p></div>
+</div>
+<div id="PRG-0082">
+<div id="PRG-0082-text-html" class=""><p><b><u>Modificar tarea:</u></b> El asesor accede al sistema, donde podrá editar una tarea. </p></div>
+</div>
+<div id="PRG-0083">
+<div id="PRG-0083-text-html" class=""><p><b><u>Finalizar tarea:</u></b> El asesor accede al sistema, donde podrá marcar como finalizada una tarea.</p></div>
+</div>
+<div id="PRG-0084">
+<div id="PRG-0084-text-html" class=""><p><b><u>Añadir estadística:</u></b> El <a href='#GLO-0007' class="rem_ref">cliente</a> interactúa con la asesoría ya sea por llamadas, emails, mensajes de chats con el asesor o gestiones (documentos fiscales, laborales y de contabilidad) y el sistema guarda esa información. </p></div>
+</div>
+<div id="PRG-0085">
+<div id="PRG-0085-text-html" class=""><p><b><u>Consultar estadística:</u></b> El asesor accede al sistema, donde podrá ver las estadísticas de cada <a href='#GLO-0007' class="rem_ref">cliente</a>. </p></div>
+</div>
 <h1 id="SEC-0064" class="section">5 Interfaz de usuario del sistema</h1>
 <h2 id="SEC-0065" class="section">5.1 Diagramas de navegación del sistema</h2>
 <div id="PRG-0058">
@@ -561,7 +607,7 @@
 <div id="PRG-0072-text-html" class=""><p>A esta pantalla llega el asesor pulsando sobre Statistics en la barra de navegación. </p>
 <p>En esta pantalla, el asesor tiene en la parte derecha una barra de búsqueda que le permite encontrar a cualquier <a href='#GLO-0007' class="rem_ref">cliente</a> con el que trabaja. </p>
 <p>Una vez seleccionado, debajo de la barra de búsqueda podrá ver la información básica de contacto del <a href='#GLO-0007' class="rem_ref">cliente</a> (Nombre, número de teléfono y correo electrónico), además de los pagos recientes del <a href='#GLO-0007' class="rem_ref">cliente</a> trimestrales de los documentos a entregar. </p>
-<p>En la parte derecha de la pantalla, se mostrará una gráfica sobre los datos del <a href='#GLO-0007' class="rem_ref">cliente</a> a lo largo de los años que ha estado trabajando con <a href='#GLO-0026' class="rem_ref">APDE</a>.</p></div>
+<p>En la parte derecha de la pantalla, se mostrará un desplegable de opción múltiple en el cual podrá elegir ver las estadísticas de los emails enviados/recibidos, llamadas establecidas, cantidad de mensajes de chat y gestión de documentos (documentos fiscales, laborales y de contabilidad) a lo largo del tiempo. Al pulsar cualquiera de las opciones le saldrá la gráfica en cuestión. </p></div>
 </div>
 <h3 id="SEC-0082" class="section">5.3.10 E-Mails</h3>
 <div id="PRG-0073">

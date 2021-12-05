@@ -27,8 +27,8 @@
 <img alt="Universidad de Sevilla" src="https://cdn.jsdelivr.net/gh/amador-duran-toro/rem/assets/images/logo_us.gif" />
 </div>
 <div id="document_name">Documento de Requisitos del Sistema</div>
-<div id="document_version">Versión 1.5</div>
-<div id="document_date">Fecha 04/12/2021</div>
+<div id="document_version">Versión 1.6</div>
+<div id="document_date">Fecha 05/12/2021</div>
 <div id="document_prepared_for">Preparado para:<p>
 <a href="#ORG-0001">APDE</a>
 </p>
@@ -1024,7 +1024,7 @@
 </p>
 </div>
 <div id="GRF-0010" class="figure">
-<img class="figure_image" src=".\image\CU03-tareas.png" width="50%%" />
+<img class="figure_image" src=".\image\CU03-tareas.png" width="40%%" />
 <p class="figure_caption">
 <span class="figure_caption_label">Figura 6:
                  </span>
@@ -1797,102 +1797,19 @@
 <tr>
 <th>Precondición</th>
 <td colspan="2">
-<div id="UC-0010-precondition-html" class=""><p>Se añaden datos de un <a href='#GLO-0007' class="rem_ref">cliente</a> nuevo. </p></div>
-</td>
-</tr>
-<tr>
-<th rowspan="3">Secuencia normal</th>
-<th class="step_number_column">Paso</th>
-<th class="step_action_column">Acción</th>
-</tr>
-<tr id="STP-0023">
-<th class="step_number">1</th>
-<td colspan="1">
-<div id="STP-0023--html" class=""><p>El actor     <a href="#ACT-0003">Cliente registrado (ACT-0003)</a>     añade por primera vez datos de su situación actual.</p></div>
-</td>
-</tr>
-<tr id="STP-0024">
-<th class="step_number">2</th>
-<td colspan="1">
-<div id="STP-0024--html" class=""><p>El sistema genera estadísticas en función de los datos proporcionados del <a href='#GLO-0007' class="rem_ref">cliente</a>.</p></div>
+<div id="UC-0010-precondition-html" class=""><p>El <a href='#GLO-0007' class="rem_ref">cliente</a> realiza una interacción.</p></div>
 </td>
 </tr>
 <tr>
 <th>Postcondición</th>
 <td colspan="2">
-<div id="UC-0010-postcondition-html" class=""><p>Las estadísticas del <a href='#GLO-0007' class="rem_ref">cliente</a> están registradas en el sistema.</p></div>
+<div id="UC-0010-postcondition-html" class=""><p>Se generan estadisticas para el <a href='#GLO-0007' class="rem_ref">cliente</a> automaticamente.</p></div>
 </td>
 </tr>
 <tr>
 <th>Comentarios</th>
 <td colspan="2">
-<div id="UC-0010-comments-html" class="remus_comments"><p>Ninguno</p></div>
-</td>
-</tr>
-</table>
-</div>
-<div id="UC-0011">
-<table class="use_case remus_table">
-<thead>
-<tr>
-<th>
-<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/useCase.png" /> UC-0011</th>
-<th class="name_column" colspan="2">Actualizar estadísticas </th>
-</tr>
-</thead>
-<tr>
-<th>Versión</th>
-<td colspan="2">1.0 (18/11/2021)
-</td>
-</tr>
-<tr>
-<th>Fuentes</th>
-<td colspan="2">
-<ul class="stakeholders">
-<li>
-<a href="#STK-0006">José Antonio Martínez Domínguez </a>
-</li>
-</ul>
-</td>
-</tr>
-<tr>
-<th>Descripción</th>
-<td colspan="2"><div id="UC-0011--html" class=""><p>El sistema deberá comportarse tal como se describe en el siguiente caso de uso cuando  se actualizan estadísticas relacionadas con un <a href='#GLO-0007' class="rem_ref">cliente</a>. </p></div>
-</td>
-</tr>
-<tr>
-<th>Precondición</th>
-<td colspan="2">
-<div id="UC-0011-precondition-html" class=""><p>Se añada nuevos datos de un <a href='#GLO-0007' class="rem_ref">cliente</a>. </p></div>
-</td>
-</tr>
-<tr>
-<th rowspan="3">Secuencia normal</th>
-<th class="step_number_column">Paso</th>
-<th class="step_action_column">Acción</th>
-</tr>
-<tr id="STP-0026">
-<th class="step_number">1</th>
-<td colspan="1">
-<div id="STP-0026--html" class=""><p>El actor     <a href="#ACT-0003">Cliente registrado (ACT-0003)</a>     añade datos de su situación actual.</p></div>
-</td>
-</tr>
-<tr id="STP-0027">
-<th class="step_number">2</th>
-<td colspan="1">
-<div id="STP-0027--html" class=""><p>El sistema actualiza las estadísticas en función de los datos proporcionados del <a href='#GLO-0007' class="rem_ref">cliente</a>.</p></div>
-</td>
-</tr>
-<tr>
-<th>Postcondición</th>
-<td colspan="2">
-<div id="UC-0011-postcondition-html" class=""><p>Las estadísticas del <a href='#GLO-0007' class="rem_ref">cliente</a> están actualizadas.</p></div>
-</td>
-</tr>
-<tr>
-<th>Comentarios</th>
-<td colspan="2">
-<div id="UC-0011-comments-html" class="remus_comments"><p>Ninguno</p></div>
+<div id="UC-0010-comments-html" class="remus_comments"><p>Las interacciones pueden ser: Llamadas, E-Mails, Chat y Gestiones (Documentos fiscales, laborales y de contabilidad).</p></div>
 </td>
 </tr>
 </table>
@@ -3673,18 +3590,6 @@
 <img class="trace" src="data:image/gif;base64,R0lGODlhEAAQAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKTI8AQEBAgICAwMDBERERYWFhwcHCIiIikpKVVVVU1NTUJCQjk5OYGBgYEAAACBAIGBAAAAgYEAgQCBgTMAAGYAAJkAAMwAAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAGb/AJn/AMz/AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZpnMZszMZv/MZgD/ZjP/Zpn/Zsz/Zv8AzMwA/wCZmZkzmZkAmcwAmQAAmTMzmWYAmcwzmf8AmQBmmTNmmWYzmZlmmcxmmf8zmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMZpnMmczMmf/MmQD/mTP/mWbMmZn/mcz/mf//mQAAzDMAmWYAzJkAzMwAzAAzmTMzzGYzzJkzzMwzzP8zzABmzDNmzGZmmZlmzMxmzP9mmQCZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/mZn/zMz/zP//zDMAzGYA/5kA/wAzzDMz/2Yz/5kz/8wz//8z/wBm/zNm/2ZmzJlm/8xm//9mzACZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/zP//2b/zJn//8z///9mZmb/Zv//ZmZm//9m/2b//8HBwV9fX3d3d4aGhpaWlsvLy7KystfX193d3ePj4+rq6vHx8fj4+P/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAEAAAAALAAAAAAQABAABwhDAP8JHEiwoMGBhg4eNGcuoUKCDB0+/Mcw4sSKFSUWxIhRo0BrIEOKtPbQ4kSBJk+mvNhQoaGXL1dC5Njy4EiQJ3MGBAA7" />
 </td>
 </tr>
-<tr>
-<th>
-<a href="#UC-0011" title="UC-0011 - Actualizar estadísticas">UC-0011</a>
-</th>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td class="trace">
-<img class="trace" src="data:image/gif;base64,R0lGODlhEAAQAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKTI8AQEBAgICAwMDBERERYWFhwcHCIiIikpKVVVVU1NTUJCQjk5OYGBgYEAAACBAIGBAAAAgYEAgQCBgTMAAGYAAJkAAMwAAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAGb/AJn/AMz/AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZpnMZszMZv/MZgD/ZjP/Zpn/Zsz/Zv8AzMwA/wCZmZkzmZkAmcwAmQAAmTMzmWYAmcwzmf8AmQBmmTNmmWYzmZlmmcxmmf8zmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMZpnMmczMmf/MmQD/mTP/mWbMmZn/mcz/mf//mQAAzDMAmWYAzJkAzMwAzAAzmTMzzGYzzJkzzMwzzP8zzABmzDNmzGZmmZlmzMxmzP9mmQCZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/mZn/zMz/zP//zDMAzGYA/5kA/wAzzDMz/2Yz/5kz/8wz//8z/wBm/zNm/2ZmzJlm/8xm//9mzACZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/zP//2b/zJn//8z///9mZmb/Zv//ZmZm//9m/2b//8HBwV9fX3d3d4aGhpaWlsvLy7KystfX193d3ePj4+rq6vHx8fj4+P/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAEAAAAALAAAAAAQABAABwhDAP8JHEiwoMGBhg4eNGcuoUKCDB0+/Mcw4sSKFSUWxIhRo0BrIEOKtPbQ4kSBJk+mvNhQoaGXL1dC5Njy4EiQJ3MGBAA7" />
-</td>
-</tr>
 </tbody>
 </table>
 <p class="matrix_caption">
@@ -3848,17 +3753,6 @@
 <tr>
 <th>
 <a href="#UC-0010" title="UC-0010 - Añadir estadísticas">UC-0010</a>
-</th>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-</tr>
-<tr>
-<th>
-<a href="#UC-0011" title="UC-0011 - Actualizar estadísticas">UC-0011</a>
 </th>
 <td>-</td>
 <td>-</td>
