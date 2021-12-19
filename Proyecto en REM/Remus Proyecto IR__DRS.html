@@ -99,8 +99,8 @@
 <li>6.1 <a href="#SEC-0085">Diagramas de la inferfaz de de servicios del sistema</a></li>
 <li>6.2 <a href="#SEC-0086">Descripción de la interfaz de servicios del sistema</a></li>
 <li>6.3 <a href="#SEC-0087">Servicios consumidos por el sistema</a></li>
-<li>6.4 <a href="#SEC-0088">Información sobre trazabilidad</a></li>
 </ul>
+<li>7 <a href="#SEC-0091">Información sobre trazabilidad</a></li>
 </ul>
 </nav>
 <div class="pagebreak"></div>
@@ -379,17 +379,485 @@
 <div id="PRG-0075-text-html" class=""><p>El <a href='#GLO-0007' class="rem_ref">cliente</a> (en caso de ser la primera vez) se comunica con el secretario de <a href='#GLO-0026' class="rem_ref">APDE</a> mediante llamada telefónica, que en caso de no coger el teléfono se genera una llamada perdida. </p>
 <p>Una vez el <a href='#GLO-0007' class="rem_ref">cliente</a> es atendido y se ha llevado a cabo una primera entrevista con el asesor asignado en la que se acuerda la fecha límite del encargo, el <a href='#GLO-0007' class="rem_ref">cliente</a> ya puede comunicarse con el asesor mediante llamadas y correos, ya sea para consultas o nuevos encargos de documentos. </p>
 <p>Si no es la primera vez, el <a href='#GLO-0007' class="rem_ref">cliente</a> tiene ya contacto con la empresa y los asesores correspondientes, con los que se comunicará directamente. </p>
-<p>El asesor realiza un documento del cual el <a href='#GLO-0007' class="rem_ref">cliente</a> es titular. Dicho documento se presenta a la entidad fiscal pertinente. </p>
-<ul>
-<li><p><a href='#GLO-0007' class="rem_ref">Cliente</a>: representa a la empresa que necesita los servicios de <a href='#GLO-0026' class="rem_ref">APDE</a>. (nombre, NIF, ubicación, teléfono de contacto, correo, dirección de <a href='#GLO-0005' class="rem_ref">facturación</a>, firma electrónica y esfuerzo (atributo derivado de los correos)) </p></li>
-<li><p>Secretario: representa al trabajador de <a href='#GLO-0026' class="rem_ref">APDE</a> encargado de tomar llamadas de la asesoría y archivar datos de llamadas en caso de que el asesor se ausente. (nombre, apellidos y DNI) </p></li>
-<li><p>Asesor: representa al trabajador de <a href='#GLO-0026' class="rem_ref">APDE</a> encargado de asesorar al <a href='#GLO-0007' class="rem_ref">cliente</a> en la categoría en la que se especializa, realizando los encargos del <a href='#GLO-0007' class="rem_ref">cliente</a> y generando documentos pertinentes. (nombre, apellidos, DNI, teléfono, e-mail, asesoramiento) </p></li>
-<li><p>Correo electrónico: representa los correos que se intercambian <a href='#GLO-0007' class="rem_ref">cliente</a> y asesores. (archivo, fecha y texto) </p></li>
-<li><p>Encargo: representa la obligación del <a href='#GLO-0007' class="rem_ref">cliente</a> para la que solicita ayuda a la asesoría, la cual asigna dicho encargo a un asesor determinado. (fecha límite) </p></li>
-<li><p>Documento: representa la obligación del <a href='#GLO-0007' class="rem_ref">cliente</a> en la que trabaja el asesor y la cual luego será presentada ante la entidad fiscal. (fecha límite, cantidad a pagar, tipo de documento) </p></li>
-<li><p>Llamadas pendientes: representa las llamadas del <a href='#GLO-0007' class="rem_ref">cliente</a> que no han podido ser atendidas por el asesor. (asesor a llamar, motivo y fecha) </p></li>
-<li><p>Entidad Fiscal: representa la entidad a la que se le presenta el documento que se le ha pedido al <a href='#GLO-0007' class="rem_ref">cliente</a>. (nombre y tipo) </p></li>
-</ul></div>
+<p>El asesor realiza un documento del cual el <a href='#GLO-0007' class="rem_ref">cliente</a> es titular. Dicho documento se presenta a la entidad fiscal pertinente.</p></div>
+</div>
+<div id="TYP-0001" class="object_type">
+<table class="object_type remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objectType.png" /> TYP-0001</th>
+<th class="name_column" colspan="1">Cliente</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (19/12/2021)
+</td>
+</tr>
+<tr>
+<th>Fuentes</th>
+<td colspan="1">
+<ul class="stakeholders">
+<li>
+<a href="#STK-0006">José Antonio Martínez Domínguez </a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="code">
+<div>
+<span class="code_comment">/**</span>
+<div id="TYP-0001-description-html" class="code_comment code_description"><p>representa a la empresa que necesita los servicios de <a href='#GLO-0026' class="rem_ref">APDE</a>.</p></div>
+<span class="code_comment">*/</span>
+</div>
+<span class="keyword ">class </span>
+<span class="class_name ">Cliente</span>
+<br />
+
+    {<br />
+<div class="code_comment code_header">// atributos</div>
+<ul class="properties">
+<li id="ATT-0068" class="property">
+<br /><span class="keyword">var </span>nombre : String</li>
+<li id="ATT-0070" class="property">
+<br /><span class="keyword">var </span>NIF : String</li>
+<li id="ATT-0071" class="property">
+<br /><span class="keyword">var </span>ubicación : String</li>
+<li id="ATT-0072" class="property">
+<br /><span class="keyword">var </span>telefonoContacto : String</li>
+<li id="ATT-0073" class="property">
+<br /><span class="keyword">var </span>correo : String</li>
+<li id="ATT-0074" class="property">
+<br /><span class="keyword">var </span>direccionFacturacion : String</li>
+<li id="ATT-0075" class="property">
+<br /><span class="keyword">var </span>firmaElectronica : String</li>
+<li id="ATT-0076" class="property">
+<br /><span class="keyword">var </span>esfuerzo : Integer</li>
+</ul>
+    }
+</div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="TYP-0001-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="TYP-0002" class="object_type">
+<table class="object_type remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objectType.png" /> TYP-0002</th>
+<th class="name_column" colspan="1">Secretario</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (19/12/2021)
+</td>
+</tr>
+<tr>
+<th>Fuentes</th>
+<td colspan="1">
+<ul class="stakeholders">
+<li>
+<a href="#STK-0006">José Antonio Martínez Domínguez </a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="code">
+<div>
+<span class="code_comment">/**</span>
+<div id="TYP-0002-description-html" class="code_comment code_description"><p>representa al trabajador de <a href='#GLO-0026' class="rem_ref">APDE</a> encargado de tomar llamadas de la asesoría y archivar datos de llamadas en caso de que el asesor se ausente.</p></div>
+<span class="code_comment">*/</span>
+</div>
+<span class="keyword ">class </span>
+<span class="class_name ">Secretario</span>
+<br />
+
+    {<br />
+<div class="code_comment code_header">// atributos</div>
+<ul class="properties">
+<li id="ATT-0078" class="property">
+<br /><span class="keyword">var </span>nombre : String</li>
+<li id="ATT-0079" class="property">
+<br /><span class="keyword">var </span>apellidos : String</li>
+<li id="ATT-0080" class="property">
+<br /><span class="keyword">var </span>DNI : String</li>
+</ul>
+    }
+</div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="TYP-0002-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="TYP-0003" class="object_type">
+<table class="object_type remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objectType.png" /> TYP-0003</th>
+<th class="name_column" colspan="1">Asesor</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (19/12/2021)
+</td>
+</tr>
+<tr>
+<th>Fuentes</th>
+<td colspan="1">
+<ul class="stakeholders">
+<li>
+<a href="#STK-0006">José Antonio Martínez Domínguez </a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="code">
+<div>
+<span class="code_comment">/**</span>
+<div id="TYP-0003-description-html" class="code_comment code_description"><p>representa al trabajador de <a href='#GLO-0026' class="rem_ref">APDE</a> encargado de asesorar al <a href='#GLO-0007' class="rem_ref">cliente</a> en la categoría en la que se especializa, realizando los encargos del <a href='#GLO-0007' class="rem_ref">cliente</a> y generando documentos pertinentes.</p></div>
+<span class="code_comment">*/</span>
+</div>
+<span class="keyword ">class </span>
+<span class="class_name ">Asesor</span>
+<br />
+
+    {<br />
+<div class="code_comment code_header">// atributos</div>
+<ul class="properties">
+<li id="ATT-0081" class="property">
+<br /><span class="keyword">var </span>nombre : String</li>
+<li id="ATT-0082" class="property">
+<br /><span class="keyword">var </span>apellidos : String</li>
+<li id="ATT-0083" class="property">
+<br /><span class="keyword">var </span>DNI : String</li>
+<li id="ATT-0084" class="property">
+<br /><span class="keyword">var </span>email : String</li>
+<li id="ATT-0085" class="property">
+<br /><span class="keyword">var </span>telefono : String</li>
+<li id="ATT-0086" class="property">
+<br /><span class="keyword">var </span>asesoramiento : Enum Literal</li>
+</ul>
+    }
+</div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="TYP-0003-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="TYP-0004" class="object_type">
+<table class="object_type remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objectType.png" /> TYP-0004</th>
+<th class="name_column" colspan="1">CorreoElectronico</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (19/12/2021)
+</td>
+</tr>
+<tr>
+<th>Fuentes</th>
+<td colspan="1">
+<ul class="stakeholders">
+<li>
+<a href="#STK-0006">José Antonio Martínez Domínguez </a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="code">
+<div>
+<span class="code_comment">/**</span>
+<div id="TYP-0004-description-html" class="code_comment code_description"><p>representa los correos que se intercambian <a href='#GLO-0007' class="rem_ref">cliente</a> y asesores.</p></div>
+<span class="code_comment">*/</span>
+</div>
+<span class="keyword ">class </span>
+<span class="class_name ">CorreoElectronico</span>
+<br />
+
+    {<br />
+<div class="code_comment code_header">// atributos</div>
+<ul class="properties">
+<li id="ATT-0087" class="property">
+<br /><span class="keyword">var </span>archivo : String</li>
+<li id="ATT-0088" class="property">
+<br /><span class="keyword">var </span>fecha : Date</li>
+<li id="ATT-0089" class="property">
+<br /><span class="keyword">var </span>texto : String</li>
+</ul>
+    }
+</div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="TYP-0004-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="TYP-0005" class="object_type">
+<table class="object_type remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objectType.png" /> TYP-0005</th>
+<th class="name_column" colspan="1">Encargo</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (19/12/2021)
+</td>
+</tr>
+<tr>
+<th>Fuentes</th>
+<td colspan="1">
+<ul class="stakeholders">
+<li>
+<a href="#STK-0006">José Antonio Martínez Domínguez </a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="code">
+<div>
+<span class="code_comment">/**</span>
+<div id="TYP-0005-description-html" class="code_comment code_description"><p>representa la obligación del <a href='#GLO-0007' class="rem_ref">cliente</a> para la que solicita ayuda a la asesoría, la cual asigna dicho encargo a un asesor determinado.</p></div>
+<span class="code_comment">*/</span>
+</div>
+<span class="keyword ">class </span>
+<span class="class_name ">Encargo</span>
+<br />
+
+    {<br />
+<div class="code_comment code_header">// atributos</div>
+<ul class="properties">
+<li id="ATT-0090" class="property">
+<br /><span class="keyword">var </span>fechaLimite : Date</li>
+</ul>
+    }
+</div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="TYP-0005-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="TYP-0006" class="object_type">
+<table class="object_type remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objectType.png" /> TYP-0006</th>
+<th class="name_column" colspan="1">Documento</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (19/12/2021)
+</td>
+</tr>
+<tr>
+<th>Fuentes</th>
+<td colspan="1">
+<ul class="stakeholders">
+<li>
+<a href="#STK-0006">José Antonio Martínez Domínguez </a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="code">
+<div>
+<span class="code_comment">/**</span>
+<div id="TYP-0006-description-html" class="code_comment code_description"><p>representa la obligación del <a href='#GLO-0007' class="rem_ref">cliente</a> en la que trabaja el asesor y la cual luego será presentada ante la entidad fiscal.   </p></div>
+<span class="code_comment">*/</span>
+</div>
+<span class="keyword ">class </span>
+<span class="class_name ">Documento</span>
+<br />
+
+    {<br />
+<div class="code_comment code_header">// atributos</div>
+<ul class="properties">
+<li id="ATT-0091" class="property">
+<br /><span class="keyword">var </span>fechaLimite : Date</li>
+<li id="ATT-0092" class="property">
+<br /><span class="keyword">var </span>cantiadadAPagar : Natural</li>
+<li id="ATT-0093" class="property">
+<br /><span class="keyword">var </span>tipoDocumento : Enum Literal</li>
+</ul>
+    }
+</div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="TYP-0006-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="TYP-0007" class="object_type">
+<table class="object_type remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objectType.png" /> TYP-0007</th>
+<th class="name_column" colspan="1">LlamadasPendientes</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (19/12/2021)
+</td>
+</tr>
+<tr>
+<th>Fuentes</th>
+<td colspan="1">
+<ul class="stakeholders">
+<li>
+<a href="#STK-0006">José Antonio Martínez Domínguez </a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="code">
+<div>
+<span class="code_comment">/**</span>
+<div id="TYP-0007-description-html" class="code_comment code_description"><p>representa las llamadas del <a href='#GLO-0007' class="rem_ref">cliente</a> que no han podido ser atendidas por el asesor.</p></div>
+<span class="code_comment">*/</span>
+</div>
+<span class="keyword ">class </span>
+<span class="class_name ">LlamadasPendientes</span>
+<br />
+
+    {<br />
+<div class="code_comment code_header">// atributos</div>
+<ul class="properties">
+<li id="ATT-0095" class="property">
+<br /><span class="keyword">var </span>motivo : String</li>
+<li id="ATT-0096" class="property">
+<br /><span class="keyword">var </span>fecha : Date</li>
+</ul>
+<br />
+<div class="code_comment code_header">// componentes</div>
+<ul class="properties">
+<li id="COM-0101" class="property">
+<br /><span class="keyword">var </span>asesorALlamar : Asesor</li>
+</ul>
+    }
+</div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="TYP-0007-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="TYP-0008" class="object_type">
+<table class="object_type remus_table">
+<thead>
+<tr>
+<th>
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/objectType.png" /> TYP-0008</th>
+<th class="name_column" colspan="1">EntidadFiscal</th>
+</tr>
+</thead>
+<tr>
+<th>Versión</th>
+<td colspan="1">1.0 (19/12/2021)
+</td>
+</tr>
+<tr>
+<th>Fuentes</th>
+<td colspan="1">
+<ul class="stakeholders">
+<li>
+<a href="#STK-0006">José Antonio Martínez Domínguez </a>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="code">
+<div>
+<span class="code_comment">/**</span>
+<div id="TYP-0008-description-html" class="code_comment code_description"><p>representa la entidad a la que se le presenta el documento que se le ha pedido al <a href='#GLO-0007' class="rem_ref">cliente</a>.</p></div>
+<span class="code_comment">*/</span>
+</div>
+<span class="keyword ">class </span>
+<span class="class_name ">EntidadFiscal</span>
+<br />
+
+    {<br />
+<div class="code_comment code_header">// atributos</div>
+<ul class="properties">
+<li id="ATT-0097" class="property">
+<br /><span class="keyword">var </span>nombre : String</li>
+<li id="ATT-0098" class="property">
+<br /><span class="keyword">var </span>tipoEntidad : Enum Literal</li>
+</ul>
+    }
+</div>
+</td>
+</tr>
+<tr>
+<th>Comentarios</th>
+<td colspan="1">
+<div id="TYP-0008-comments-html" class="remus_comments"><p>Ninguno</p></div>
+</td>
+</tr>
+</table>
 </div>
 <h2 id="SEC-0060" class="section">3.3 Diagramas de estado de las clases del sistema</h2>
 <div id="GRF-0015" class="figure">
@@ -687,7 +1155,230 @@
 <div id="PRG-0088">
 <div id="PRG-0088-text-html" class=""><p>El unico servicio consumido por el sistema es el del proveedor de correo elegido por el asesor. Puede ser tanto Gmail, como Outlook o  Yahoo Mail.   </p></div>
 </div>
-<h2 id="SEC-0088" class="section">6.4 Información sobre trazabilidad</h2>
+<h1 id="SEC-0091" class="section">7 Información sobre trazabilidad</h1>
+<div id="TRM-0006" class="traceability_matrix">
+<table class="traceability_matrix remus_table">
+<thead>
+<tr>
+<th class="matrix_oid">
+<img src="https://cdn.jsdelivr.net/gh/amador-duran-toro/remus/assets/images/icons/traceabilityMatrix.png" /> <span class="matriz_oid">TRM-0006</span>
+<br />
+<button class="reduce_font">A-</button>
+<button class="increase_font">A+</button>
+</th>
+<th class="matrix_column">
+<a href="#UC-0001" title="UC-0001 - Añadir cliente">UC-0001</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0002" title="UC-0002 - Editar cliente">UC-0002</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0003" title="UC-0003 - Eliminar cliente">UC-0003</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0004" title="UC-0004 - Enviar email a asesor">UC-0004</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0005" title="UC-0005 - Enviar email a cliente">UC-0005</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0006" title="UC-0006 - Añadir tarea">UC-0006</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0007" title="UC-0007 - Editar tarea">UC-0007</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0008" title="UC-0008 - Finalizar tarea">UC-0008</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0009" title="UC-0009 - Añadir mensaje al chat">UC-0009</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0010" title="UC-0010 - Consultar estadísticas">UC-0010</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0011" title="UC-0011 - Consultar cliente">UC-0011</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0012" title="UC-0012 - Consultar email">UC-0012</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0013" title="UC-0013 - Consultar tarea">UC-0013</a>
+</th>
+<th class="matrix_column">
+<a href="#UC-0014" title="UC-0014 - Visualizar chat">UC-0014</a>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>
+<a href="#TYP-0001" title="TYP-0001 - Cliente">TYP-0001</a>
+</th>
+<td class="trace">
+<img class="trace" src="data:image/gif;base64,R0lGODlhEAAQAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKTI8AQEBAgICAwMDBERERYWFhwcHCIiIikpKVVVVU1NTUJCQjk5OYGBgYEAAACBAIGBAAAAgYEAgQCBgTMAAGYAAJkAAMwAAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAGb/AJn/AMz/AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZpnMZszMZv/MZgD/ZjP/Zpn/Zsz/Zv8AzMwA/wCZmZkzmZkAmcwAmQAAmTMzmWYAmcwzmf8AmQBmmTNmmWYzmZlmmcxmmf8zmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMZpnMmczMmf/MmQD/mTP/mWbMmZn/mcz/mf//mQAAzDMAmWYAzJkAzMwAzAAzmTMzzGYzzJkzzMwzzP8zzABmzDNmzGZmmZlmzMxmzP9mmQCZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/mZn/zMz/zP//zDMAzGYA/5kA/wAzzDMz/2Yz/5kz/8wz//8z/wBm/zNm/2ZmzJlm/8xm//9mzACZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/zP//2b/zJn//8z///9mZmb/Zv//ZmZm//9m/2b//8HBwV9fX3d3d4aGhpaWlsvLy7KystfX193d3ePj4+rq6vHx8fj4+P/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAEAAAAALAAAAAAQABAABwhDAP8JHEiwoMGBhg4eNGcuoUKCDB0+/Mcw4sSKFSUWxIhRo0BrIEOKtPbQ4kSBJk+mvNhQoaGXL1dC5Njy4EiQJ3MGBAA7" />
+</td>
+<td class="trace">
+<img class="trace" src="data:image/gif;base64,R0lGODlhEAAQAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKTI8AQEBAgICAwMDBERERYWFhwcHCIiIikpKVVVVU1NTUJCQjk5OYGBgYEAAACBAIGBAAAAgYEAgQCBgTMAAGYAAJkAAMwAAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAGb/AJn/AMz/AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZpnMZszMZv/MZgD/ZjP/Zpn/Zsz/Zv8AzMwA/wCZmZkzmZkAmcwAmQAAmTMzmWYAmcwzmf8AmQBmmTNmmWYzmZlmmcxmmf8zmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMZpnMmczMmf/MmQD/mTP/mWbMmZn/mcz/mf//mQAAzDMAmWYAzJkAzMwAzAAzmTMzzGYzzJkzzMwzzP8zzABmzDNmzGZmmZlmzMxmzP9mmQCZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/mZn/zMz/zP//zDMAzGYA/5kA/wAzzDMz/2Yz/5kz/8wz//8z/wBm/zNm/2ZmzJlm/8xm//9mzACZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/zP//2b/zJn//8z///9mZmb/Zv//ZmZm//9m/2b//8HBwV9fX3d3d4aGhpaWlsvLy7KystfX193d3ePj4+rq6vHx8fj4+P/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAEAAAAALAAAAAAQABAABwhDAP8JHEiwoMGBhg4eNGcuoUKCDB0+/Mcw4sSKFSUWxIhRo0BrIEOKtPbQ4kSBJk+mvNhQoaGXL1dC5Njy4EiQJ3MGBAA7" />
+</td>
+<td class="trace">
+<img class="trace" src="data:image/gif;base64,R0lGODlhEAAQAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKTI8AQEBAgICAwMDBERERYWFhwcHCIiIikpKVVVVU1NTUJCQjk5OYGBgYEAAACBAIGBAAAAgYEAgQCBgTMAAGYAAJkAAMwAAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAGb/AJn/AMz/AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZpnMZszMZv/MZgD/ZjP/Zpn/Zsz/Zv8AzMwA/wCZmZkzmZkAmcwAmQAAmTMzmWYAmcwzmf8AmQBmmTNmmWYzmZlmmcxmmf8zmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMZpnMmczMmf/MmQD/mTP/mWbMmZn/mcz/mf//mQAAzDMAmWYAzJkAzMwAzAAzmTMzzGYzzJkzzMwzzP8zzABmzDNmzGZmmZlmzMxmzP9mmQCZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/mZn/zMz/zP//zDMAzGYA/5kA/wAzzDMz/2Yz/5kz/8wz//8z/wBm/zNm/2ZmzJlm/8xm//9mzACZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/zP//2b/zJn//8z///9mZmb/Zv//ZmZm//9m/2b//8HBwV9fX3d3d4aGhpaWlsvLy7KystfX193d3ePj4+rq6vHx8fj4+P/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAEAAAAALAAAAAAQABAABwhDAP8JHEiwoMGBhg4eNGcuoUKCDB0+/Mcw4sSKFSUWxIhRo0BrIEOKtPbQ4kSBJk+mvNhQoaGXL1dC5Njy4EiQJ3MGBAA7" />
+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td class="trace">
+<img class="trace" src="data:image/gif;base64,R0lGODlhEAAQAPcAAAAAAIAAAACAAICAAAAAgIAAgACAgMDAwMDcwKTI8AQEBAgICAwMDBERERYWFhwcHCIiIikpKVVVVU1NTUJCQjk5OYGBgYEAAACBAIGBAAAAgYEAgQCBgTMAAGYAAJkAAMwAAAAzADMzAGYzAJkzAMwzAP8zAABmADNmAGZmAJlmAMxmAP9mAACZADOZAGaZAJmZAMyZAP+ZAADMADPMAGbMAJnMAMzMAP/MAGb/AJn/AMz/AAAAMzMAM2YAM5kAM8wAM/8AMwAzMzMzM2YzM5kzM8wzM/8zMwBmMzNmM2ZmM5lmM8xmM/9mMwCZMzOZM2aZM5mZM8yZM/+ZMwDMMzPMM2bMM5nMM8zMM//MMzP/M2b/M5n/M8z/M///MwAAZjMAZmYAZpkAZswAZv8AZgAzZjMzZmYzZpkzZswzZv8zZgBmZjNmZmZmZplmZsxmZgCZZjOZZmaZZpmZZsyZZv+ZZgDMZjPMZpnMZszMZv/MZgD/ZjP/Zpn/Zsz/Zv8AzMwA/wCZmZkzmZkAmcwAmQAAmTMzmWYAmcwzmf8AmQBmmTNmmWYzmZlmmcxmmf8zmTOZmWaZmZmZmcyZmf+ZmQDMmTPMmWbMZpnMmczMmf/MmQD/mTP/mWbMmZn/mcz/mf//mQAAzDMAmWYAzJkAzMwAzAAzmTMzzGYzzJkzzMwzzP8zzABmzDNmzGZmmZlmzMxmzP9mmQCZzDOZzGaZzJmZzMyZzP+ZzADMzDPMzGbMzJnMzMzMzP/MzAD/zDP/zGb/mZn/zMz/zP//zDMAzGYA/5kA/wAzzDMz/2Yz/5kz/8wz//8z/wBm/zNm/2ZmzJlm/8xm//9mzACZ/zOZ/2aZ/5mZ/8yZ//+Z/wDM/zPM/2bM/5nM/8zM///M/zP//2b/zJn//8z///9mZmb/Zv//ZmZm//9m/2b//8HBwV9fX3d3d4aGhpaWlsvLy7KystfX193d3ePj4+rq6vHx8fj4+P/78KCgpICAgP8AAAD/AP//AAAA//8A/wD//////yH5BAEAAAAALAAAAAAQABAABwhDAP8JHEiwoMGBhg4eNGcuoUKCDB0+/Mcw4sSKFSUWxIhRo0BrIEOKtPbQ4kSBJk+mvNhQoaGXL1dC5Njy4EiQJ3MGBAA7" />
+</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<th>
+<a href="#TYP-0002" title="TYP-0002 - Secretario">TYP-0002</a>
+</th>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<th>
+<a href="#TYP-0003" title="TYP-0003 - Asesor">TYP-0003</a>
+</th>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<th>
+<a href="#TYP-0004" title="TYP-0004 - CorreoElectronico">TYP-0004</a>
+</th>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<th>
+<a href="#TYP-0005" title="TYP-0005 - Encargo">TYP-0005</a>
+</th>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<th>
+<a href="#TYP-0006" title="TYP-0006 - Documento">TYP-0006</a>
+</th>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<th>
+<a href="#TYP-0007" title="TYP-0007 - LlamadasPendientes">TYP-0007</a>
+</th>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<th>
+<a href="#TYP-0008" title="TYP-0008 - EntidadFiscal">TYP-0008</a>
+</th>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<p class="matrix_caption">
+<span class="matrix_caption_label">Matriz de rastreabilidad 1:
+                 </span>
+<span id="TRM-0006-name-html" class="">Clases frente a casos de uso</span>
+</p>
+</div>
 <h1 id="SEC-0089" class="appendix">A Glosario de acrónimos y abreviaturas</h1>
 <a id="PRG-0086"></a>
 <div id="GLO-0026" class="glo">
